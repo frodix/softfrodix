@@ -1,0 +1,40 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="citasamg.list">
+      <field name="name">citasamg list</field>
+      <field name="model">citasamg.citasamg</field>
+      <field name="arch" type="xml">
+        <tree>
+		  <field name="orden"/>
+          <field name="autor"/>
+          <field name="cita"/>
+		  <field name="fecha"/>
+        </tree>
+      </field>
+    </record>   
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="citasamg.action_window">
+      <field name="name">citasamg window</field>
+      <field name="res_model">citasamg.citasamg</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Top menu item -->
+    
+    <menuitem name="citasamg" id="citasamg.menu_root"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Citas" id="citasamg.lista" parent="citasamg.menu_root"/>
+    
+    <!-- actions -->
+    
+    <menuitem name="Lista" id="citasamg.menu_1_list" parent="citasamg.lista"
+              action="citasamg.action_window"/>
+			      
+  </data>
+</odoo>
